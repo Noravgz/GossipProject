@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">GOSSIP PROJECT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+      <%= link_to 'Gossips', gossips_path, class: 'nav-link active', aria: { current: 'page' } %>
+      <%= link_to 'Contacts', contact_path, class: 'nav-link' %>
+      <%= link_to 'Notre équipe', team_path, class: 'nav-link' %> 
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+  <h1>Contactez-nous</h1>
+  <p>Pour toute question, veuillez nous contacter à l'adresse suivante :</p>
+  <p>Email : contact@gossiproject.com</p>
+  <p>Téléphone : 01 23 45 67 89</p>
+  <form action="mailto:contact@gossiproject.com" method="post" enctype="text/plain">
+    <label for="name">Nom :</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="message">Message :</label><br>
+    <textarea id="message" name="message" required></textarea><br>
+    <input type="submit" value="Envoyer">
+  </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">GOSSIP PROJECT</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+      <%= link_to 'Gossips', gossips_path, class: 'nav-link active', aria: { current: 'page' } %>
+      <%= link_to 'Contacts', contact_path, class: 'nav-link' %> 
+      <%= link_to 'Notre équipe', team_path, class: 'nav-link' %> 
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<h1 class="text-center">Bienvenue sur The Gossip Project </h1>
+<h2 class="text-center">Liste des Potins</h2>
+
+<% @gossips.each do |gossip| %>
+<div class="card">
+  <div class="card-header">
+    <h2><%= link_to gossip.title, gossip_path(gossip) %></h2>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= gossip.content %></p>
+    <a href="<%= gossip_path(gossip) %>" class="btn btn-primary">Lire plus</a>
+  </div>
+</div>
+<% end %>
+
+
